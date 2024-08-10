@@ -1,0 +1,13 @@
+services:
+  local-docker:
+    build: .
+    ports:
+      - '3001:80'
+    env_file: .env.development
+  real-prod:
+    build: .
+    ports:
+      - '3002:80'
+    environment:
+      VITE_APP_TITLE: 'This_has_been_replaced_in_runtime!'
+      VITE_INITIAL_COUNT: 3
