@@ -1,9 +1,11 @@
 #!/bin/sh
 
+prefix=VITE_
+
 # Look for any .js file
 for file in $(find . -type f -name "*.js"); do
-    # Loop through environment variables that start with 'VITE_'
-    for var in $(env | grep VITE_); do
+    # Loop through environment variables that start with $prefix
+    for var in $(env | grep $prefix); do
         # Extract the key and value of the variable
         key=$(echo $var | cut -d '=' -f 1)
         value=$(echo $var | cut -d '=' -f 2)
