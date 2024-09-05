@@ -9,7 +9,7 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM nginx:1.24.0-alpine-slim
+FROM nginxinc/nginx-unprivileged:alpine3.20
 
 USER root
 WORKDIR /usr/share/nginx/html
@@ -22,6 +22,6 @@ COPY --from=builder /tmp/dist .
 # In this case, executing "docker-entrypoint.sh" and editing .js files requires permissions.
 RUN chmod -R 777 .
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["sh", "docker-entrypoint.sh"]
