@@ -10,7 +10,7 @@ for file in $(find . -type f -name "*.js"); do
         key=$(echo $var | cut -d '=' -f 1)
         value=$(echo $var | cut -d '=' -f 2)
         # Replace occurrences of $key (with an escaped $) with $value in the file
-        sed -e "s/\$$key/$value/g" -i $file
+        sed -e "s|\$$key|$value|g" -i $file
     done
 done
 
