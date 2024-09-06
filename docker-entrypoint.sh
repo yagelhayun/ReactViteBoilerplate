@@ -3,9 +3,9 @@
 prefix=VITE_
 
 # Look for any .js file
-for file in $(find . -type f -name "*.js"); do
+for file in *.js; do
     # Loop through environment variables that start with $prefix
-    for var in $(env | grep $prefix); do
+    for var in $(env | grep "$prefix"); do
         # Extract the key and value of the variable
         key=$(echo $var | cut -d '=' -f 1)
         value=$(echo $var | cut -d '=' -f 2)
