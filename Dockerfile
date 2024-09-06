@@ -1,4 +1,4 @@
-FROM node:16.14.2-alpine as builder
+FROM node:alpine as builder
 
 USER root
 WORKDIR /tmp
@@ -18,7 +18,7 @@ COPY docker-entrypoint.sh .
 COPY --from=builder /tmp/dist .
 
 # Here we grant permissions to any user to read, write and execute any file in the WORKDIR.
-# This is necessary where the container in run in an unprivileged environment.
+# This is necessary when the container is run in an unprivileged environment.
 # In this case, executing "docker-entrypoint.sh" and editing .js files requires permissions.
 RUN chmod -R 777 .
 

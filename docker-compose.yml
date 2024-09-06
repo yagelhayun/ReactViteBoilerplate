@@ -9,6 +9,6 @@ services:
     ports:
       - '3002:8080'
     environment:
-      VITE_APP_TITLE: 'This_has_been_replaced_in_runtime!'
+      VITE_APP_TITLE: 'This_has_been_replaced_at_runtime!'
       VITE_INITIAL_COUNT: 3
       VITE_ARTICLE_URL: https://medium.com/@yagelhayun/0f0169e6ab14
