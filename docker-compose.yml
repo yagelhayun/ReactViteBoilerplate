@@ -11,4 +11,4 @@ services:
     environment:
       VITE_APP_TITLE: 'This_has_been_replaced_at_runtime!'
       VITE_INITIAL_COUNT: 3
-      VITE_ARTICLE_URL: https://medium.com/@yagelhayun/0f0169e6ab14
+      VITE_ARTICLE_URL: https://medium.com/@yagelhayun/building-frontend-applications-with-docker-a-guide-to-production-ready-images-0f0169e6ab14
