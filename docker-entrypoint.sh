@@ -3,7 +3,7 @@
 prefix=CLIENT_
 
 # Look for any .js file
-for file in **/*.js; do
+for file in $(find . -type f -name "**/index*.js"); do
     # Loop through environment variables that start with $prefix
     for var in $(env | grep "$prefix"); do
         # Extract the key and value of the variable

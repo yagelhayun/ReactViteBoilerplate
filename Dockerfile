@@ -1,4 +1,4 @@
-FROM node:alpine as builder
+FROM node:alpine AS builder
 
 USER root
 WORKDIR /tmp
